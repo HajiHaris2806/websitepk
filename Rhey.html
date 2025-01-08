@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Personal Branding Rhe</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        background: #2c2c2c; /* Dark background for better contrast */
+        color: #ffff; /* Light text for readability */
+        line-height: 1.6;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 50px auto;
+        background: #0073ff; /* Lighter background for the content */
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 40px #074a8e;
+        display: flex;
+        padding: 30px;
+        position: relative;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .container:hover {
+        transform: scale(1.03);
+      }
+
+      .left-column {
+        width: 35%;
+        padding-right: 20px;
+        background: #ff5722; /* Orange accent color for the left section */
+        color: #fff;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+      }
+
+      .left-column .profile-picture {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        margin-top: 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        border: 5px solid #fff;
+      }
+
+      .profile-picture img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .left-column .header h2 {
+        font-size: 32px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+        color: #fff;
+      }
+
+      .section h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #ff5722;
+        font-weight: bold;
+        position: relative;
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      .section h2:before {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background-color: #ff784e;
+      }
+
+      .section ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+      }
+
+      .section ul li {
+        margin-bottom: 12px;
+        font-size: 16px;
+        color: #fff;
+      }
+
+      .right-column {
+        width: 65%;
+        padding-left: 30px;
+      }
+
+      .card {
+        background: #2c2c2c; /* Dark gray background for cards */
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgb(0, 0, 0);
+        padding: 20px;
+        margin-bottom: 25px;
+        transition: all 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .timeline .event {
+        margin-bottom: 20px;
+      }
+
+      .event h3 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: bold;
+        color: #e0e0e0;
+      }
+
+      .event p {
+        margin-top: 5px;
+        font-size: 16px;
+        color: #bbb;
+      }
+
+      .contact-info div {
+        margin-bottom: 10px;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        color: #e0e0e0;
+        justify-content: center;
+      }
+
+      .contact-info img {
+        width: 24px;
+        height: 24px;
+        margin-right: 15px;
+      }
+
+      .skills {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        color: #e0e0e0;
+      }
+
+      .skills div {
+        font-size: 16px;
+      }
+
+      .button {
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      .button a {
+        padding: 12px 25px;
+        background-color: #0073ff; /* Button color */
+        color: white;
+        font-size: 18px;
+        text-decoration: none;
+        border-radius: 30px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 5px 15px rgb(0, 0, 0);
+        transition: all 0.3s ease;
+      }
+
+      .button a:hover {
+        background-color: #3d3d3d;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        transform: translateY(-2px);
+      }
+
+      .personal-info,
+      .hobbies,
+      .vision {
+        margin-top: 30px;
+      }
+
+      .personal-info,
+      .hobbies,
+      .vision,
+      .contact-info {
+        background: #2c2c2c; /* Light background for sections */
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+      }
+
+      .hobby {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .hobby img {
+        width: 25px;
+        height: 25px;
+        margin-right: 15px;
+      }
+
+      .vision p {
+        color: #e0e0e0;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .personal-info p,
+      .hobbies p,
+      .vision p {
+        font-size: 16px;
+        color: #e0e0e0;
+        margin: 10px 0;
+      }
+
+      .personal-info p span,
+      .hobbies p span,
+      .vision p span {
+        font-weight: bold;
+        color: #ff5722;
+      }
+
+      /* Subtle Animation for Background */
+      @keyframes bgAnimation {
+        0% {
+          background-position: 0 0;
+        }
+        100% {
+          background-position: 400px 400px;
+        }
+      }
+
+      body {
+        animation: bgAnimation 15s ease-in-out infinite;
+        background-size: 800px 800px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="right-column">
+        <div class="profile-picture">
+          <img src="asset/zx25.jpg" alt="Foto Profil" />
+        </div>
+
+        <div class="header">
+          <h2></h2>
+          <p></p>
+        </div>
+
+        <div class="card">
+          <h2>Rhea Unikha Harits</h2>
+          <h3>5240411082</h3>
+          <p><span></span></p>
+          <p><span></span></p>
+        </div>
+
+        <div class="card">
+          <h2>Hobi</h2>
+          <div class="hobby">
+            <img src="asset/gamer.png" alt="Ngegame" />
+            Ngegame
+          </div>
+          <div class="hobby">
+            <img src="asset/sketch.png" alt="Menggambar" />
+            Menggambar
+          </div>
+          <div class="hobby">
+            <img src="asset/dunk.png" alt="Basket" />
+            Basket
+          </div>
+          <div class="hobby">
+            <img src="asset/motorbike.png" alt="Motoran" />
+            Motoran
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Visi</h2>
+          <p>
+            Menjadi pribadi yang inovatif, kreatif, dan mampu memberikan dampak
+            positif dalam setiap bidang yang digeluti, serta terus belajar untuk
+            pengembangan diri dan berkontribusi.
+          </p>
+        </div>
+        <div class="card">
+          <h2>Project</h2>
+          <p>Ini adalah hasil editing video saya untuk mempromosikan rental motorsport Yogyakarta di area Kalasan, Sleman.</p>
+          <video width="550" height="360" controls>
+            <source src="asset/zx1.mp4" type="video/mp4">
+            <source src="asset/video.ogg" type="video/ogg">
+            Browser Anda tidak mendukung tag video.
+        </video>
+        <video width="550" height="360" controls>
+          <source src="asset/cbr.mp4" type="video/mp4">
+          <source src="asset/video.ogg" type="video/ogg">
+          Browser Anda tidak mendukung tag video.
+      </video>
+          </div>
+      </div>
+
+      <div class="right-column">
+        <div class="card">
+          <h2>Keahlian</h2>
+          <div class="skills">
+            <div>• Editing Video</div>
+            <div>• Berbisnis</div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Profil</h2>
+          <p>
+            Haloo,Nama saya Rhea Unikha Harits.Saya adalah profesional multitalenta dengan keahlian dalam editing foto dan video,
+            Berbisnis, dan kemampuan persuasi yang kuat. Berpengalaman
+            dalam menghasilkan visual yang menarik untuk berbagai proyek serta
+            memiliki keterampilan bisnis untuk mendapat keuntungan dan ide baru untuk mengembangkan produk yang bermanfaat. Berorientasi pada hasil dengan kemampuan komunikasi yang
+            mampu membangun hubungan baik dengan klien maupun tim.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Pendidikan</h2>
+          <div class="timeline">
+            <div class="event">
+              <h3>SDN Keraton</h3>
+              <p>Periode : (2011 - 2016)</p>
+            </div>
+            <div class="event">
+              <h3>SMP Muhammadiyah 5 Yogyakarta</h3>
+              <p>Periode : (2017 - 2020)</p>
+            </div>
+            <div class="event">
+              <h3>SMTI Yogyakarta</h3>
+              <p>Kimia Industri : (2020 - 2021)</p>
+            </div>
+            <div class="event">
+              <h3>SMK Muhammadiyah 3 Yogyakarta</h3>
+              <p>Teknik Komputer Jaringan : (2021 - 2023)</p>
+            </div>
+            <div class="event">
+              <h3>Universitas Teknologi Yogyakarta</h3>
+              <p>Sarjana Informatika : (2024 - 202?)</p>
+          </div>
+        </div>
+
+        <div>
+          <h2></h2>
+          <div class="timeline">
+            <div class="event">
+              <h3></h3>
+              <p></p>
+              <p></p>
+            </div>
+            <div class="event">
+              <h3></h3>
+              <p></p>
+              <p></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Kontak</h2>
+          <div class="contact-info">
+            <div>
+              <img src="asset/instagram.png" alt="Instagram" />
+              Instagram: @rheunika
+            </div>
+            <div>
+              <img src="asset/social.png" alt="WhatsApp" />
+              WhatsApp: +6285879165981
+            </div>
+          </div>
+        </div>
+
+        <div class="button">
+          <a href="mailto:rheaunika@gmail.com">Kirim Email</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

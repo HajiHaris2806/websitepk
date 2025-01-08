@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../tes"
+		},
+		{
+			"path": "../web mobile"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "web mobile"
+	}
+}
